@@ -9,6 +9,8 @@ const server = http.createServer((request, response) => {
     response.write("<h1 style='color: red; background-color: pink'>Hello world</h1>");
     response.write("<h3 style='font-style: italic; text-decoration: underline'>We are from Greenwich Vietnam</h3>");
     response.write("<h2 style='font-style: italic; text-decoration: underline'>Thanh ba ga</h2>");
+    response.write('<p>This is a paragraph</p>')
+    response.write('<p>This is another paragraph</p>')
     response.write("<iframe width=\"1300\" height=\"700\" src=\"https://www.youtube.com/embed/uZQJPclKn2E\"></iframe>");
     response.end();
   });
