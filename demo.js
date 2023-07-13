@@ -35,3 +35,14 @@ console.log('Job: '+job)
 
 check = true //boolean
 gender = 'm' //character
+
+a = 10
+b = a++     //postfix operator: b=a=10 => a++ => a=11
+c = ++a     //prefix operator: ++a = a+ 1= 12 => c=a=12
+console.log("a = "+a)
+console.log("b = "+b)
+console.log("c = "+c)
+
+x = 5
+x = x + 3   //x +=3
+x = x * 5   //x *=5
