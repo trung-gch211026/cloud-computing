@@ -1,7 +1,7 @@
 const http = require('http')
 const fs = require('fs')
 const host = "localhost"
-const port = 3000
+const port = 5000
 const server = http.createServer((req, res)=>{
     fs.readFile("demo.html", (err, data)=>{
         if(err){
