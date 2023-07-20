@@ -4,5 +4,19 @@
 <h1>{{pass}}</h1>
 <h1>{{gender}}</h1>
 
+<ol>
+  {{#each sports}}
+    <li style="font-size: 25px;">{{this}}</li>
+  {{/each}}
+</ol>
 
-
+<table border="1" style="font-size: 25px;">
+    <tr>
+        <th>Sports</th>
+    </tr>
+    {{#each sports}}
+    <tr>
+        <td>{{this}}</td>
+    </tr>
+    {{/each}}
+</table>

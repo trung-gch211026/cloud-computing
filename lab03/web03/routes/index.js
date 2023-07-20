@@ -7,13 +7,15 @@ router.get('/', (req, res)=>{
   var grade = 7.5
   var pass = true
   var gender = 'm'
+  var sports = ["football", "basketball", "volleyball", "swimming", "climbing"]
   res.render('index',
   {
     country: country,
     year:year,
     grade:grade,
     pass: pass,
-    gender: gender
+    gender: gender,
+    sports:sports
   })
 })
 
