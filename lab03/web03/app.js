@@ -41,5 +41,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-app.listen(5000) //change default port
+
+// var port = process.env.PORT || 3001;   
+app.listen(process.env.PORT || 3001) //change default port
 module.exports = app;
