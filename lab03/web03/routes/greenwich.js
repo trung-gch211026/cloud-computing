@@ -3,7 +3,8 @@ var router = express.Router()
 
 router.get('/hn', (req, res)=>{
     var hanoi = "Ha Noi"
-    res.render('hanoi', {hn : hanoi})
+    var address = "So 2 Pham Van Bach - Cau Giay - Ha Noi"
+    res.render('hanoi', {hn : hanoi, address : address})
 })
 
 router.get('/hcm', (req, res)=>{
