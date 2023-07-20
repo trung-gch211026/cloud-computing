@@ -1,7 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(177, 201, 223);
+  background-color: rgb(154, 160, 178);
 }
 
 a {
@@ -10,4 +10,5 @@ a {
 h1{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: blueviolet;
+  background-color: rgb(162, 230, 230);
 }
