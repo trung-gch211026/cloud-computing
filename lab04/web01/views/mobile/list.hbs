@@ -1,0 +1,17 @@
+<!--su dung emet code de tao bang nhanh table>(tr>(th*3))+(tr>(td*3))-->
+<table border="1">
+    <tr>
+        <th>No</th>
+        <th>Product</th>
+        <th>Image</th>
+    </tr>
+    {{#each product }}
+        <tr>
+            <td>{{no}}</td>
+            <td>{{product}}</td>
+            <td><img src="{{ img }}" width="100" height="100" ></td>
+        </tr>
+    {{/each}}
+    
+</table>
+
