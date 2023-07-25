@@ -6,6 +6,10 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+//1. khai báo tên của router
+var fptRouter = require('./routes/fpt')
+var mobileRouter = require('./routes/mobile')
+var laptopRouter = require('./routes/laptop')
 
 var app = express();
 
@@ -21,6 +25,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+//1B. khai báo đường dẫn của router
+app.use('/fpt', fptRouter);
+app.use('/mobile', mobileRouter);
+app.use('/laptop', laptopRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
