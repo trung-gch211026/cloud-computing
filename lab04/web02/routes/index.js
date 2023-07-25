@@ -20,7 +20,12 @@ router.post('/login', (req, res)=>{
   // console.log(password)
 
   //2. tra du lieu voi format JSON
-  res.send(data)
+  // res.send(data)
+  if(username == "trungnx" && password == "123"){
+    res.send("<h1>Login passed</h1>")
+  }else{
+    res.send("<h1>Login failed</h1>")
+  }
 })
 
 module.exports = router;
