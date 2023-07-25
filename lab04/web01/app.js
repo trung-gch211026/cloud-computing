@@ -38,4 +38,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+//change server port
+app.listen(6969)
+
 module.exports = app;
