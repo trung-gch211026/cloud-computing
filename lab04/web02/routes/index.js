@@ -28,4 +28,12 @@ router.post('/login', (req, res)=>{
   }
 })
 
+router.get('/input', (req, res)=>{
+  res.render('add_student')
+})
+
+router.post('/output', (req, res)=>{
+  res.render('view_student', {student : req.body})
+})
+
 module.exports = router;
