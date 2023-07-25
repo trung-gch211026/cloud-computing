@@ -12,6 +12,9 @@ var app = express();
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended: false}))
 
+var hbs = require('hbs');
+hbs.registerHelper('dateFormat', require('handlebars-dateformat')); 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -40,6 +43,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-app.listen(6969)
+app.listen(process.env.PORT || 3001)
 
 module.exports = app;
