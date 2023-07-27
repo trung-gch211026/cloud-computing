@@ -9,6 +9,17 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+//1. khai báo thư viện mongoose để kết nối database
+var mongoose = require('mongoose')
+//2. khai bao URI lien ket den database
+var local = "mongodb://localhost:27017/"
+var atlas = "mongodb+srv://nguyentrungtest2292003:eBR8e3lLUXFtpNTi@cluster0.djedfbj.mongodb.net/"
+//3. Kiem tra ket noi den database
+
+mongoose.connect(atlas)
+.then(()=> console.log("connect to db succeed"))
+.catch((err)=>console.log(err))
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
