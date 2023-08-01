@@ -4,6 +4,7 @@ var BookSchema = mongoose.Schema({
     title: String,
     author: String,
     date: Date,
+    image: String,
     price: Number,
     quantity: Number
 })
