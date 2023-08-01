@@ -6,7 +6,8 @@ var BookSchema = mongoose.Schema({
     date: Date,
     image: String,
     price: Number,
-    quantity: Number
+    quantity: Number,
+    video: String
 })
 
 var BookModel = mongoose.model("sach", BookSchema, "book")
