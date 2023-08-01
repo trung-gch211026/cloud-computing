@@ -18,6 +18,9 @@ mongoose.connect(db)
 .then(()=>console.log('SUCCEED'))
 .catch((err)=>console.log('FAILED'))
 
+var bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
