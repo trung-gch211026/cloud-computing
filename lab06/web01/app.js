@@ -9,6 +9,15 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+//1. Khai bao mongoose
+var mongoose = require('mongoose')
+//note: can ghi ro ten cua DB o cuoi url. EG: "demo"
+var db = "mongodb+srv://nguyentrungtest2292003:eBR8e3lLUXFtpNTi@cluster0.djedfbj.mongodb.net/demo"
+
+mongoose.connect(db)
+.then(()=>console.log('SUCCEED'))
+.catch((err)=>console.log('FAILED'))
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
