@@ -8,6 +8,6 @@ var BookSchema = mongoose.Schema({
     quantity: Number
 })
 
-var BookModel = mongoose.model("book", BookSchema, "book")
+var BookModel = mongoose.model("sach", BookSchema, "book")
 
 module.exports = BookModel
