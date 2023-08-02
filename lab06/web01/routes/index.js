@@ -2,7 +2,7 @@ var express = require('express')
 const BookModel = require('../models/BookModel')
 var router = express.Router()
 
-router.get('/', async (req, res)=>{
+router.get('/book', async (req, res)=>{
   var books = await BookModel.find()
   //lay du lieu tu collection "books" va luu vao array
   //console.log(books)
