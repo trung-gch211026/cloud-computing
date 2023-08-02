@@ -3,6 +3,10 @@ const BookModel = require('../models/BookModel')
 const StudentModel = require('../models/StudentModel')
 var router = express.Router()
 
+router.get('/', (req, res)=>{
+  res.render('index')
+})
+
 router.get('/book', async (req, res)=>{
   var books = await BookModel.find()
   //lay du lieu tu collection "books" va luu vao array

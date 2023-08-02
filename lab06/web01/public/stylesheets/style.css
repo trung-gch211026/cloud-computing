@@ -3,8 +3,9 @@ body {
 }
 
 h1 {
+  font-size: 24px;
   text-align: center;
-  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 table {
@@ -32,4 +33,28 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #ddd;
+}
+.card {
+  width: 300px;
+  background-color: #ba86da;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+}
+a {
+  display: block;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+}
+
+a:hover {
+  background-color: #f2f2f2;
+}
+
+a:active {
+  background-color: #e5e5e5;
 }
