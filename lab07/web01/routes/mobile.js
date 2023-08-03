@@ -32,4 +32,20 @@ router.get('/deleteall', async (req, res)=>{
     res.redirect("/mobile");
 })
 
+router.get('/detail/:id', async (req,res)=>{
+    var id = req.params.id
+    var mobile = await MobileModel.findById(id)
+    res.render('mobile/detail', {mobile:mobile})
+})
+
+router.post('/order', async (req,res)=>{
+    var data = req.body
+    var id = data.id
+    var mobile = await MobileModel.findById(id)
+    var quantity = data.quantity
+    var text = "You have ordered a product with id "+id+" and quantity is "+quantity
+    console.log(text)
+    // res.render('mobile/order', {mobile:mobile, quantity:quantity})
+})
+
 module.exports = router;
