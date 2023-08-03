@@ -42,10 +42,12 @@ router.post('/order', async (req,res)=>{
     var data = req.body
     var id = data.id
     var mobile = await MobileModel.findById(id)
+    var price = data.price
     var quantity = data.quantity
-    var text = "You have ordered a product with id "+id+" and quantity is "+quantity
-    console.log(text)
-    // res.render('mobile/order', {mobile:mobile, quantity:quantity})
+    var total = price * quantity
+    // var text = "You have ordered a product with id "+id+" and quantity is "+quantity
+    // console.log(text)
+    res.render('mobile/order', {mobile:mobile, quantity:quantity, price:price, total:total})
 })
 
 module.exports = router;

@@ -18,8 +18,10 @@
           name="quantity"
           min="1"
           max="{{mobile.quantity}}"
+          value="1"
         />
         <input type="hidden" name="id" value="{{ mobile._id }}">
+        <input type="hidden" name="price" value="{{ mobile.price }}">
         <input type="submit" class="btn btn-primary" value="Order" />
       </form>
     </div>
