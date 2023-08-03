@@ -1,8 +1,60 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
+h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  text-align: center;
+}
+
+td {
+  padding: 8px;
+  border: 1px solid #dddddd;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+.card {
+  width: 300px;
+  background-color: #ba86da;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+}
 a {
-  color: #00B7FF;
+  display: block;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+}
+
+a:hover {
+  background-color: #f2f2f2;
+}
+
+a:active {
+  background-color: #e5e5e5;
 }
