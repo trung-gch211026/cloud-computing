@@ -1,9 +1,11 @@
 var express = require('express')
+const LaptopModel = require("../models/LaptopModel");
 var router = express.Router()
 
+
 router.get("/", async (req, res) => {
-    var mobiles = await MobileModel.find();
-    res.render("mobile/index", { mobiles: mobiles });
+    var laptop = await LaptopModel.find();
+    res.render("laptop/index", { laptop: laptop });
   });
 
-module.exports = router
+module.exports = router 
