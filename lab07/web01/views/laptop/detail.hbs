@@ -13,8 +13,15 @@
       <h5>Price: ${{laptop.price}}</h5>
       <h5>Description: <br>{{laptop.description}}</h5>
       <form action="/laptop/order" method="post">
-        <input type="hidden" name="id" value="{{ mobile._id }}">
-        <input type="hidden" name="price" value="{{ mobile.price }}">
+      <input
+          type="number"
+          name="quantity"
+          min="1"
+          max="10"
+          value="1"
+        />
+        <input type="hidden" name="id" value="{{ laptop._id }}">
+        <input type="hidden" name="price" value="{{ laptop.price }}">
         <input type="submit" class="btn btn-primary" value="Order" />
       </form>
     </div>

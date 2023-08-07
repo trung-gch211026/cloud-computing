@@ -28,4 +28,14 @@ router.get('/deleteall', async (req, res)=>{
     res.redirect("/laptop");
 })
 
+router.post('/order', async (req,res)=>{
+    var data = req.body
+    var id = data.id
+    var laptop = await LaptopModel.findById(id)
+    var price = data.price
+    var quantity = data.quantity
+    var total = price * quantity
+    res.render('laptop/order', {laptop:laptop, price:price, total:total})
+})
+
 module.exports = router;

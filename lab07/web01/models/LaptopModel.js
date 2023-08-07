@@ -1,15 +1,16 @@
 const mongoose = require('mongoose')
 
-var MobileSchema = mongoose.Schema({
+var LaptopSchema = mongoose.Schema({
     brandName   : String,
     laptopModel  : String,
     description    : String,
     price       : Number,
     date        : String,
     image       : String,
-    bestSeller  : Boolean
+    bestSeller  : Boolean,
+    quantity : Number
 })
 
-const MobileModel = mongoose.model("laptop", MobileSchema, "laptop")
+const MobileModel = mongoose.model("laptop", LaptopSchema, "laptop")
 
 module.exports = MobileModel
