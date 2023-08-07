@@ -1,9 +1,9 @@
 <div class="container mt-3 mb-3">
-  <h1>Mobile List</h1>
+  <h1>Laptop List</h1>
   <a href="" class="btn btn-success">Add</a>
   <a
     onclick="return confirm('Are you sure you want to delete all')"
-    href="/mobile/deleteall"
+    href="/laptop/deleteall"
     class="btn btn-danger"
   >Delete all</a>
   <table border="1">
@@ -22,11 +22,11 @@
         <th>{{brandName}}</th>
         <th>{{laptopModel}}</th>
         <th>{{price}}$</th>
-        <th><a href="/mobile/detail/{{_id}}"><img src="{{image}}" width="100" height="100" /></a></th>
+        <th><a href="/laptop/detail/{{_id}}"><img src="{{image}}" width="100" height="100" /></a></th>
         <th>
           <a href="" class="btn btn-warning">Edit</a>
           <a
-            href="/mobile/delete/{{_id}}"
+            href="/laptop/delete/{{_id}}"
             onclick="return confirm('Are you sure you want to delete this product?')"
             class="btn btn-danger"
           >Delete</a>
