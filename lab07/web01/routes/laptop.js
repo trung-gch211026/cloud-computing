@@ -13,4 +13,19 @@ router.get("/detail/:id", async (req, res) => {
   res.render("laptop/detail", { laptop: laptop });
 });
 
+router.get("/delete/:id", async (req, res) => {
+    var id = req.params.id;
+    await LaptopModel.findByIdAndDelete(id)
+      .then(() => console.log("Delete success"))
+      .catch((error) => console.log("Delete failed"));
+    res.redirect("/laptop");
+});
+
+router.get('/deleteall', async (req, res)=>{
+    await LaptopModel.deleteMany()
+    .then(() => console.log("Delete success"))
+    .catch((error) => console.log("Delete failed"));
+    res.redirect("/laptop");
+})
+
 module.exports = router;
