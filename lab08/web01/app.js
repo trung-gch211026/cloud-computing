@@ -20,6 +20,9 @@ mongoose.connect(db)
 .then(()=>console.log('SUCCEED'))
 .catch((err)=>console.log('FAILED'))
 
+var hbs = require('hbs');
+hbs.registerHelper('dateFormat', require('handlebars-dateformat')); 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
