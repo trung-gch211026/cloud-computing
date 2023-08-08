@@ -12,11 +12,19 @@
         </div>
         <div class="form-group">
             <label class="h4 text text-success">Gender</label>
-            <input class="form-control" type="text" name="gender" required>
+            <br>
+            {{!-- value is the data gonna save into db, eg: value = Nam then when you display gender field the data will be "Nam" --}}
+            Male<input type="radio" name="gender" value="Male">  
+            Female<input type="radio" name="gender" value="Female">
         </div>
         <div class="form-group">
             <label class="h4 text text-success">Department</label>
-            <input class="form-control" type="text" name="department" required>
+            <br>
+            <Select class="form-control" name="department">
+                <option value="IT">Computing</option>
+                <option value="Business">Business</option>
+                <option value="Graphic Design">Graphic Design</option>
+            </Select>
         </div>
         <div class="form-group">
             <label class="h4 text text-success">Class</label>
@@ -28,7 +36,7 @@
         </div>
         <div class="form-group">
             <label class="h4 text text-success">Student Year</label>
-            <input class="form-control" type="number" name="studentYear" required>
+            <input class="form-control" type="number" name="studentYear" required min="1" max="4">
         </div>
         <div class="form-group">
             <label class="h4 text text-success">Image</label>
