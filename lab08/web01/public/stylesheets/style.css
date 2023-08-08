@@ -42,22 +42,7 @@ tr:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
 }
-a {
-  display: block;
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 10px;
-  text-align: center;
-}
 
-a:hover {
-  background-color: #f2f2f2;
-}
-
-a:active {
-  background-color: #e5e5e5;
-}
 .container {
   padding: 20px;
   border: 1px solid #ccc;

@@ -23,7 +23,7 @@
     </tr>
     {{#each students}}
       <tr>
-        <th><img src="{{ image }}"></th>
+        <th><img src="/images/{{ image }}" width="100" height="150"></th>
         <th>{{name}}</th>
         <th>{{dateFormat dob "DD/MM/YYYY"}}</th>
         <th>{{gender}}</th>
@@ -31,10 +31,10 @@
         <th>{{ class }}</th>
         <th>{{ gpa }}</th>
         <th>{{ studentYear }}</th>
-        <td>
+        <th>
             <a href="/student/edit/{{ _id }}" class="btn btn-warning">Edit</a> 
-            <a href="/student/delete/{{ _id }}" class="btn btn-danger">Delete</a>
-        </td>
+            <a href="/student/delete/{{ _id }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this student?')">Delete</a>
+        </th>
       </tr>
     {{/each}}
 
