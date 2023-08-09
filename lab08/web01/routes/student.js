@@ -1,7 +1,6 @@
 var express = require("express");
 const StudentModel = require("../models/StudentModel");
 const multer = require("multer");
-const path = require('path')
 var router = express.Router();
 
 router.get("/", async (req, res) => {
