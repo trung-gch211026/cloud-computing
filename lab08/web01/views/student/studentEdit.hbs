@@ -13,17 +13,17 @@
             <div class="form-group">
                 <label class="h4 text text-success">Gender</label>
                 <br>
-                Male<input type="radio" name="gender" value="Male">  
-                Female<input type="radio" name="gender" value="Female">
+                     Male <input type="radio" name="gender" value="Male" {{ student.selectedMale }}>
+                     Female <input type="radio" name="gender" value="Female" {{ student.selectedFemale }}>
             </div>
             <div class="form-group">
                 <label class="h4 text text-success">Department</label>
                 <br>
-                <Select class="form-control" name="department">
-                    <option value="IT">Computing</option>
-                    <option value="Business">Business</option>
-                    <option value="Graphic Design">Graphic Design</option>
-                </Select>
+                    <select class="form-control" name="department">
+                        <option value="IT" {{ student.selectedIT }}>Computing</option>
+                        <option value="Business" {{ student.selectedBusiness }}>Business</option>
+                        <option value="Graphic Design" {{ student.selectedGraphicDesign }}>Graphic Design</option>
+                    </select>
             </div>
             <div class="form-group">
                 <label class="h4 text text-success">Class</label>

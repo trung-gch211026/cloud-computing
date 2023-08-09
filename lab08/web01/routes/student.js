@@ -39,7 +39,12 @@ router.get('/edit/:id', async (req, res) => {
     var student = await StudentModel.findById(id);
     var formattedStudent = {
         ...student.toObject(),
-        formattedDob: student.dob ? student.dob.toISOString().substring(0, 10) : ''
+        formattedDob: student.dob ? student.dob.toISOString().substring(0, 10) : '',
+        selectedMale: student.gender === 'Male' ? 'checked' : '',
+        selectedFemale: student.gender === 'Female' ? 'checked' : '',
+        selectedIT: student.department === 'IT' ? 'selected' : '',
+        selectedBusiness: student.department === 'Business' ? 'selected' : '',
+        selectedGraphicDesign: student.department === 'Graphic Design' ? 'selected' : ''
     };
     res.render('student/studentEdit', { student: formattedStudent });
 });
