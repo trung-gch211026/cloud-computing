@@ -37,14 +37,28 @@ router.post('/add', async (req, res)=>{
 router.get('/edit/:id', async (req, res) => {
     var id = req.params.id;
     var student = await StudentModel.findById(id);
-    res.render('student/studentEdit', { student: student });
+    var formattedStudent = {
+        ...student.toObject(),
+        formattedDob: student.dob ? student.dob.toISOString().substring(0, 10) : ''
+    };
+    res.render('student/studentEdit', { student: formattedStudent });
 });
 
-router.post('/edit/:id', async (req, res)=>{
+
+router.post('/edit/:id', async (req, res) => {
     var id = req.params.id;
-    var student = req.body;
-    await StudentModel.findByIdAndUpdate(id, student);
+    var updatedStudent = req.body;
+
+    var originalStudent = await StudentModel.findById(id);
+
+    Object.keys(updatedStudent).forEach(key => {
+        if (updatedStudent[key] !== '' && updatedStudent[key] !== undefined) {
+            originalStudent[key] = updatedStudent[key];
+        }
+    });
+
+    await originalStudent.save();
     res.redirect('/student');
-})
+});
 
 module.exports = router;
