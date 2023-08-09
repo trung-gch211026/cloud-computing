@@ -1,6 +1,7 @@
 var express = require("express");
 const StudentModel = require("../models/StudentModel");
 const multer = require("multer");
+const path = require('path')
 var router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -40,8 +41,6 @@ var upload = multer({ storage: storage });
 router.post("/add", upload.single("image"), async (req, res) => {
   var student = req.body;
   await StudentModel.create(student)
-    .then(console.log("Add successfully"))
-    .catch((err) => console.log(err));
   res.redirect("/student");
 });
 
