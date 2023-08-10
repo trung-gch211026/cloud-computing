@@ -39,9 +39,12 @@ var upload = multer({ storage: storage });
 
 router.post("/add", upload.single("image"), async (req, res) => {
   var student = req.body;
-  await StudentModel.create(student)
+  student.image = req.file.filename; 
+
+  await StudentModel.create(student);
   res.redirect("/student");
 });
+
 
 router.get("/edit/:id", async (req, res) => {
   var id = req.params.id;
@@ -59,20 +62,25 @@ router.get("/edit/:id", async (req, res) => {
   res.render("student/studentEdit", { student: formattedStudent });
 });
 
-router.post("/edit/:id", async (req, res) => {
+router.post("/edit/:id", upload.single("image"), async (req, res) => {
   var id = req.params.id;
   var updatedStudent = req.body;
+
+  if (req.file) {
+      updatedStudent.image = req.file.filename; 
+  }
 
   var originalStudent = await StudentModel.findById(id);
 
   Object.keys(updatedStudent).forEach((key) => {
-    if (updatedStudent[key] !== "" && updatedStudent[key] !== undefined) {
-      originalStudent[key] = updatedStudent[key];
-    }
+      if (updatedStudent[key] !== "" && updatedStudent[key] !== undefined) {
+          originalStudent[key] = updatedStudent[key];
+      }
   });
 
   await originalStudent.save();
   res.redirect("/student");
 });
+
 
 module.exports = router;
