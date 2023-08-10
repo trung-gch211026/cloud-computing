@@ -82,15 +82,19 @@ router.post("/edit/:id", upload.single("image"), async (req, res) => {
   res.redirect("/student");
 });
 
-router.post('/search')
-
-router.get('/sort/gpa/asc' async(req, res)=>{
-
+router.post('/search', async(req,res)=>{
+  var keyword = req.body.keyword
+  var students = await StudentModel.find({name : new RegExp( keyword, "i")}) //name ben trai la cot name trong bang student, name ben phai la bien name
+  res.render('student/studentList', {students:students})
 })
 
-router.get('/sort/gpa/desc' async(req, res)=>{
+// router.get('/sort/gpa/asc' async(req, res)=>{
   
-})
+// })
+
+// router.get('/sort/gpa/desc' async(req, res)=>{
+  
+// })
 
 
 module.exports = router;
