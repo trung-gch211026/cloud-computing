@@ -82,15 +82,5 @@ router.post("/edit/:id", upload.single("image"), async (req, res) => {
   res.redirect("/student");
 });
 
-router.post('/search')
-
-router.get('/sort/gpa/asc' async(req, res)=>{
-
-})
-
-router.get('/sort/gpa/desc' async(req, res)=>{
-  
-})
-
 
 module.exports = router;
