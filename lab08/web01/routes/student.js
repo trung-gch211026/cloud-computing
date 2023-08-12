@@ -84,7 +84,13 @@ router.post("/edit/:id", upload.single("image"), async (req, res) => {
 
 router.post('/search', async(req,res)=>{
   var keyword = req.body.keyword
-  var students = await StudentModel.find({name : new RegExp( keyword, "i")}) //name ben trai la cot name trong bang student, name ben phai la bien name
+  //name ben trai la cot name trong bang student, name ben phai la bien name
+  var students = await StudentModel.find({
+    $or: [
+      { name: new RegExp(keyword, "i") },
+      { class: new RegExp(keyword, "i") }
+    ]
+  });
   res.render('student/studentList', {students:students})
 })
 
