@@ -37,7 +37,7 @@ var storage = multer.diskStorage({
 });
 var upload = multer({ storage: storage });
 
-router.post("/add", upload.single("image"), async (req, res) => {
+router.post("/add",  async (req, res) => {
   var student = req.body;
   student.image = req.file.filename; 
 
