@@ -4,7 +4,7 @@ const router = express.Router()
 
 router.get('/', async (req, res)=>{
     //get data from collection "student"
-    var students = StudentModel.find()
+    var students = await StudentModel.find()
     //return API
     res.send(students)
 })
