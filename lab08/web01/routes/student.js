@@ -83,7 +83,7 @@ router.post("/edit/:id", upload.single("image"), async (req, res) => {
 });
 
 router.post('/search', async(req,res)=>{
-  var keyword = req.body.keyword
+  var keyword = req.body.keyword 
   //name ben trai la cot name trong bang student, name ben phai la bien name
   var students = await StudentModel.find({
     $or: [
